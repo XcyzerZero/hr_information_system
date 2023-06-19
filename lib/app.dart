@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
         providers: [...AppPages.allBlocProviders(context)],
         child: ScreenUtilInit(
-          designSize: const Size(375, 812),
+          designSize: const Size(360, 800),
           builder: (context, child) => const MaterialApp(
             debugShowCheckedModeBanner: false,
             onGenerateRoute: AppPages.GenerateRouteSettings,

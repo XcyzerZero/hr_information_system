@@ -6,9 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:isso_hr_information_system/functions/auth/views/pages/auth_screen.dart';
 import 'package:isso_hr_information_system/functions/onboarding/views/bloc/onboarding_bloc.dart';
 
-import '../../../../constant/app_constants.dart/app_constants.dart';
 import '../../../../constant/theme/app_colors.dart';
-import '../../../../global.dart';
 
 class OnboardingScreen extends StatefulWidget {
   static const routeName = "/onboardingScreen";
@@ -116,15 +114,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         SizedBox(
           height: 32.h,
         ),
-        Container(
-          child: Text(
-            title,
-            style: TextStyle(
-                fontFamily: "Anton",
-                color: AppColors.primary500,
-                fontSize: 32.sp,
-                fontWeight: FontWeight.bold),
-          ),
+        Text(
+          title,
+          style: TextStyle(
+              fontFamily: "Anton",
+              color: AppColors.primary500,
+              fontSize: 32.sp,
+              fontWeight: FontWeight.bold),
         ),
         SizedBox(
           height: 16.h,
@@ -144,7 +140,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ),
         GestureDetector(
           onTap: () {
-            print(index);
             if (index < 3) {
               //animation
               pageController.animateToPage(index,
@@ -167,7 +162,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   color: Colors.grey.withOpacity(0.1),
                   spreadRadius: 1,
                   blurRadius: 2,
-                  offset: Offset(0, 1),
+                  offset: const Offset(0, 1),
                 ),
               ],
             ),
