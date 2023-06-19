@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:isso_hr_information_system/functions/auth/views/pages/auth_screen.dart';
+import 'package:isso_hr_information_system/functions/onboarding/views/bloc/onboarding_bloc.dart';
+import 'package:isso_hr_information_system/functions/onboarding/views/pages/onboarding_screen.dart';
 import 'package:isso_hr_information_system/routes/names.dart';
 
 import '../functions/auth/views/bloc/auth_bloc.dart';
@@ -10,6 +12,13 @@ import '../functions/auth/views/bloc/auth_bloc.dart';
 class AppPages {
   static List<PageEntity> routes() {
     return [
+      PageEntity(
+        route: AppRoutes.INITIAL,
+        page: const OnboardingScreen(),
+        bloc: BlocProvider(
+          create: (_) => OnboardingBloc(),
+        ),
+      ),
       PageEntity(
         route: AppRoutes.AUTHENTICATION,
         page: const AuthScreen(),
@@ -45,6 +54,7 @@ class AppPages {
           return MaterialPageRoute(
               builder: (_) => const Login(), settings: settings);
         }*/
+        print(result.first.page);
         return MaterialPageRoute(
             builder: (_) => result.first.page, settings: settings);
       }

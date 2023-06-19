@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
           designSize: const Size(375, 812),
           builder: (context, child) => const MaterialApp(
             debugShowCheckedModeBanner: false,
-            home: AuthScreen(),
             onGenerateRoute: AppPages.GenerateRouteSettings,
           ),
         ));

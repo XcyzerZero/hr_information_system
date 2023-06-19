@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../constant/theme/app_colors.dart';
+import '../../../../constant/theme/app_colors.dart';
 
 class AuthScreen extends StatelessWidget {
+  static const routeName = "/authScreen";
   const AuthScreen({super.key});
 
   @override
