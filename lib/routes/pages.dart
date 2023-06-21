@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:isso_hr_information_system/functions/auth/views/pages/auth_screen.dart';
+import 'package:isso_hr_information_system/functions/home_page/views/bloc/home_page_bloc.dart';
+import 'package:isso_hr_information_system/functions/home_page/views/pages/home_page.dart';
 import 'package:isso_hr_information_system/functions/onboarding/views/bloc/onboarding_bloc.dart';
 import 'package:isso_hr_information_system/functions/onboarding/views/pages/onboarding_screen.dart';
 import 'package:isso_hr_information_system/routes/names.dart';
@@ -24,6 +26,13 @@ class AppPages {
         page: const AuthScreen(),
         bloc: BlocProvider(
           create: (_) => AuthBloc(),
+        ),
+      ),
+      PageEntity(
+        route: AppRoutes.HOME_PAGE,
+        page: const HomePageScreen(),
+        bloc: BlocProvider(
+          create: (_) => HomePageBloc(),
         ),
       ),
     ];

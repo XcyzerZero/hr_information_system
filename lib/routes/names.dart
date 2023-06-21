@@ -3,4 +3,7 @@ class AppRoutes {
   static const INITIAL = "/";
   //Authentication Screen
   static const AUTHENTICATION = "/authScreen";
+
+  //
+  static const HOME_PAGE = "/homePageScreen";
 }

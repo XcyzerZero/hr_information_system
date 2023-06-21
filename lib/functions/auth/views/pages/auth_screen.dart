@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:isso_hr_information_system/functions/auth/repositories/auth_controller.dart';
 import 'package:isso_hr_information_system/functions/auth/views/bloc/auth_bloc.dart';
 import 'package:isso_hr_information_system/functions/auth/views/widgets/auth_widget.dart';
+import 'package:isso_hr_information_system/functions/home_page/views/pages/home_page.dart';
 
 import '../../../../constant/theme/app_colors.dart';
 
@@ -69,7 +70,10 @@ class AuthScreen extends StatelessWidget {
                         SizedBox(
                           height: 28.h,
                         ),
-                        buildLoginButton("Login", () {})
+                        buildLoginButton("Login", () {
+                          Navigator.pushNamedAndRemoveUntil(context,
+                              HomePageScreen.routeName, (route) => false);
+                        })
                       ],
                     ),
                   );
