@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:isso_hr_information_system/functions/home_page/views/widgets/home_page_widgets.dart';
-import '';
 import '../../../../constant/theme/app_colors.dart';
 
 class HomePageScreen extends StatelessWidget {
@@ -22,108 +21,27 @@ class HomePageScreen extends StatelessWidget {
           ),
           child: CustomScrollView(
             slivers: [
-              buildSliverAppBar(context),
+              //TODO: Add the user information from firebase
+              buildSliverAppBar(
+                  context: context,
+                  employeeName: "Jan Edilbert Namo Solomon",
+                  employeePosition: "Mobile App Developer",
+                  employeePicture: "assets/images/profile_picture.jpg"),
+
+              //TODO: Add the leave information from firebase
+              buildLeaveInformationBox(silNumber: 2, offSetNumber: 5),
               SliverToBoxAdapter(
-                child: Container(
-                  margin: EdgeInsets.only(top: 8.h),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          "AVAILABLE LEAVE",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 16.sp),
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: AppColors.neutral300,
-                                ),
-                                margin: const EdgeInsets.symmetric(
-                                    horizontal: 12, vertical: 8),
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w, vertical: 12.h),
-                                child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "SIL",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 20.sp),
-                                      ),
-                                      Text(
-                                        "1",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 31.sp),
-                                      ),
-                                    ]),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: AppColors.neutral300,
-                                ),
-                                margin: const EdgeInsets.symmetric(
-                                    horizontal: 12, vertical: 8),
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w, vertical: 12.h),
-                                child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "OFFSET",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 20.sp),
-                                      ),
-                                      Text(
-                                        "1",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 31.sp),
-                                      ),
-                                    ]),
-                              ),
-                            ),
-                          ],
-                        )
-                      ]),
+                child: SizedBox(
+                  height: 8.h,
                 ),
               ),
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                      height: 400,
-                      color: Colors.green,
-                    ),
-                  ),
-                ),
+              buildAttendanceSummaryInformationBox(
+                summaryDate: "February 2023",
+                summaryPresent: 3,
+                summaryAbsent: 2,
+                summaryLeave: 4,
               ),
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                      height: 400,
-                      color: Colors.green,
-                    ),
-                  ),
-                ),
-              ),
+              buildDateTodayBoxAdapter(context),
             ],
           ),
         ),
